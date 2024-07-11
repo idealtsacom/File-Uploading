@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div class="Choosen File">
+        <h>Upload File</h>
+        <input type="file" id="File">
+        <button onclick="Upload()">Upload</button>
+      </div>
+      <div class="item">
+      
+        <ul id="list"></ul>
+      </div>
+      <script>
+        function Upload(){
+            var fileInput = document.getElementById("File");
+            var fileList = fileInput.files;
+            
+            if(fileList.length === 0){
+                alert("Please select a file.");
+                return;
+            }
+            
+            var listItem = document.getElementById("list");
+            var li = document.createElement("li");
+            
+            var fileName = fileList[0].name;
+            li.appendChild(document.createTextNode(fileName));
+            listItem.appendChild(li);
+        }
+      </script>
+
+
+  
+</body>
+</html>
